@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Owl Studios</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08090f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ===== FUNDO ===== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #6c4cff;
+      opacity: 0.12;
+      filter: blur(140px);
+      border-radius: 50%;
+      top: -200px;
+      left: -150px;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: #00c8ff;
+      opacity: 0.08;
+      filter: blur(130px);
+      border-radius: 50%;
+      right: -150px;
+      bottom: -100px;
+      z-index: -1;
+    }
+
+    /* ===== NAVBAR ===== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: rgba(8, 9, 15, 0.8);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      font-size: 28px;
+      margin-right: 7px;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .owl {
+      font-size: 75px;
+      margin-bottom: 20px;
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 9vw, 85px);
+      line-height: 1;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ffffff, #a99cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      padding: 15px 25px;
+      background: white;
+      color: #08090f;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+    }
+
+    /* ===== SEÇÕES ===== */
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #888;
+    }
+
+    /* ===== JOGOS ===== */
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .game {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .game:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .game-cover {
+      height: 190px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 65px;
+      background:
+        radial-gradient(circle at top left, #5140a0, transparent 50%),
+        linear-gradient(135deg, #191629, #10111a);
+    }
+
+    .game-content {
+      padding: 22px;
+    }
+
+    .game-content h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .game-content p {
+      color: #999;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .game-button {
+      display: inline-block;
+      padding: 11px 18px;
+      background: #ffffff;
+      color: #111;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .game-button:hover {
+      transform: scale(1.04);
+    }
+
+    /* ===== SOBRE ===== */
+
+    .about {
+      text-align: center;
+      max-width: 750px;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #999;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #666;
+    }
+
+    .footer-logo {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== TELEMÓVEL ===== */
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 15px 20px;
+      }
+
+      nav div:last-child {
+        display: none;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">
+      <span>🦉</span>
+      Owl Studios
+    </div>
+
+    <div>
+      <a href="#jogos">Jogos</a>
+      <a href="#sobre">Sobre</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <div class="hero-content">
+
+      <div class="owl">🦉</div>
+
+      <h1>Owl Studios</h1>
+
+      <p>
+        Bem-vindo ao meu pequeno estúdio de jogos.
+        Descobre as minhas criações e começa a jogar.
+      </p>
+
+      <a href="#jogos" class="hero-button">
+        🎮 Ver os jogos
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- JOGOS -->
+
+  <section id="jogos">
+
+    <div class="section-title">
+      <h2>🎮 Os meus jogos</h2>
+      <p>Explora os jogos criados pela Owl Studios.</p>
+    </div>
+
+    <div class="games">
+
+      <!-- JOGO 1 -->
+
+      <div class="game">
+
+        <div class="game-cover">
+          🦉
+        </div>
+
+        <div class="game-content">
+
+          <h3>Owl Adventure</h3>
+
+          <p>
+            Uma aventura misteriosa onde nada é o que parece.
+          </p>
+
+          <a href="#" class="game-button">
+            ▶ Jogar
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOGO 2 -->
+
+      <div class="game">
+
+        <div class="game-cover">
+          🚀
+        </div>
+
+        <div class="game-content">
+
+          <h3>Space Mission</h3>
+
+          <p>
+            Prepara a nave e parte numa missão pelo espaço.
+          </p>
+
+          <a href="#" class="game-button">
+            ▶ Jogar
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOGO 3 -->
+
+      <div class="game">
+
+        <div class="game-cover">
+          ⚔️
+        </div>
+
+        <div class="game-content">
+
+          <h3>Dark Quest</h3>
+
+          <p>
+            Entra numa aventura cheia de desafios e perigos.
+          </p>
+
+          <a href="#" class="game-button">
+            ▶ Jogar
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOBRE -->
+
+  <section id="sobre">
+
+    <div class="about">
+
+      <h2>🦉 Sobre a Owl Studios</h2>
+
+      <p>
+        A Owl Studios é um pequeno estúdio independente
+        dedicado à criação de jogos divertidos e experiências
+        diferentes. Este é o lugar onde os meus jogos ganham vida.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      🦉 Owl Studios
+    </div>
+
+    <p>
+      © 2026 Owl Studios. Todos os direitos reservados.
+    </p>
+
+  </footer>
+
+</body>
+</html>
