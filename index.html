@@ -24,8 +24,6 @@
       overflow-x: hidden;
     }
 
-    /* ===== FUNDO ===== */
-
     body::before {
       content: "";
       position: fixed;
@@ -54,7 +52,7 @@
       z-index: -1;
     }
 
-    /* ===== NAVBAR ===== */
+    /* NAVBAR */
 
     nav {
       position: sticky;
@@ -90,7 +88,7 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
+    /* HERO */
 
     .hero {
       min-height: 75vh;
@@ -153,7 +151,7 @@
       box-shadow: 0 10px 30px rgba(255,255,255,0.15);
     }
 
-    /* ===== SEÇÕES ===== */
+    /* SEÇÕES */
 
     section {
       max-width: 1100px;
@@ -174,7 +172,7 @@
       color: #888;
     }
 
-    /* ===== JOGOS ===== */
+    /* JOGOS */
 
     .games {
       display: grid;
@@ -225,7 +223,7 @@
     .game-button {
       display: inline-block;
       padding: 11px 18px;
-      background: #ffffff;
+      background: white;
       color: #111;
       border-radius: 8px;
       text-decoration: none;
@@ -237,11 +235,12 @@
       transform: scale(1.04);
     }
 
-    /* ===== SOBRE ===== */
+    /* SOBRE */
 
     .about {
       text-align: center;
       max-width: 750px;
+      margin: auto;
     }
 
     .about h2 {
@@ -255,7 +254,7 @@
       line-height: 1.8;
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
 
     footer {
       text-align: center;
@@ -269,7 +268,7 @@
       margin-bottom: 10px;
     }
 
-    /* ===== TELEMÓVEL ===== */
+    /* TELEMÓVEL */
 
     @media (max-width: 600px) {
 
@@ -305,6 +304,7 @@
   <!-- NAVBAR -->
 
   <nav>
+
     <div class="logo">
       <span>🦉</span>
       Owl Studios
@@ -314,6 +314,7 @@
       <a href="#jogos">Jogos</a>
       <a href="#sobre">Sobre</a>
     </div>
+
   </nav>
 
 
@@ -346,13 +347,20 @@
   <section id="jogos">
 
     <div class="section-title">
+
       <h2>🎮 Os meus jogos</h2>
-      <p>Explora os jogos criados pela Owl Studios.</p>
+
+      <p>
+        Explora os jogos criados pela Owl Studios.
+      </p>
+
     </div>
+
 
     <div class="games">
 
-      <!-- JOGO 1 -->
+
+      <!-- AETHERIA -->
 
       <div class="game">
 
@@ -362,13 +370,15 @@
 
         <div class="game-content">
 
-          <h3>Owl Adventure</h3>
+          <h3>Aetheria</h3>
 
           <p>
-            Uma aventura misteriosa onde nada é o que parece.
+            Descobre o mundo de Aetheria e começa a tua aventura.
           </p>
 
-          <a href="#" class="game-button">
+          <!-- BOTÃO DO JOGO -->
+
+          <a href="Aetheria.html" class="game-button">
             ▶ Jogar
           </a>
 
@@ -387,14 +397,14 @@
 
         <div class="game-content">
 
-          <h3>Space Mission</h3>
+          <h3>Em breve...</h3>
 
           <p>
-            Prepara a nave e parte numa missão pelo espaço.
+            Um novo jogo da Owl Studios está a caminho.
           </p>
 
           <a href="#" class="game-button">
-            ▶ Jogar
+            🔒 Em breve
           </a>
 
         </div>
@@ -412,19 +422,20 @@
 
         <div class="game-content">
 
-          <h3>Dark Quest</h3>
+          <h3>Em breve...</h3>
 
           <p>
-            Entra numa aventura cheia de desafios e perigos.
+            Mais aventuras estão a ser preparadas.
           </p>
 
           <a href="#" class="game-button">
-            ▶ Jogar
+            🔒 Em breve
           </a>
 
         </div>
 
       </div>
+
 
     </div>
 
@@ -463,6 +474,7 @@
     </p>
 
   </footer>
+
 
 </body>
 </html>
